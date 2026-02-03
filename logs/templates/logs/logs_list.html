@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    {% for log in logs %}
+        <li>{{ log.created_at }}: {{ log.title }}</li>
+    {% empty %}
+        <div>ログは一つもありません。</div>
+    {% endfor %}
+</ul>
+
+{% endblock %}
