@@ -3,7 +3,9 @@
 {% block content %}
 <ul>
     {% for log in logs %}
-        <li>{{ log.created_at }}: {{ log.title }}</li>
+        <li>{{ log.created_at }}: 
+            <a href="{%url 'logs_detail' log.pk %}">{{ log.title }}</a>
+        </li>
     {% empty %}
         <div>ログは一つもありません。</div>
     {% endfor %}
